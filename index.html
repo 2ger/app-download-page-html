@@ -176,8 +176,8 @@
 	<script src="js/jquery-2.2.4.min.js"></script>
 	<script>
 	
-    $(".down").attr("href",iosurl);
-    $(".xia").attr("href",androidurl);
+    // $(".down").attr("href",iosurl);
+    // $(".xia").attr("href",androidurl);
     
     $(".logo").attr("src",logo);
     
@@ -215,9 +215,10 @@
             $('.android').remove();
             if (Sys.safari) {
                 $(".down").click(function(event) {
+                    location.href = iosurl;
                     setTimeout(function(){
                         // if(confirm){
-                        //     location.href = "http://skd.12.ac.cn/safariapp/";
+                        //     location.href = iosurl;
                         // }
                          $(".pup").fadeIn();
                     },2500)
@@ -233,6 +234,12 @@
                  });
             }
         } 
+
+
+        $(".xia").click(function(event) {
+            location.href = androidurl;
+        });
+
         //判断是否QQ内置浏览器
         else if(ua.indexOf(' qq')>-1 && ua.indexOf('mqqbrowser') <0){
             $(".down").attr("href",'#');
