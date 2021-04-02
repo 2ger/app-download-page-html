@@ -175,7 +175,8 @@
 
 	<script src="js/jquery-2.2.4.min.js"></script>
 	<script>
-	
+	var iosex = "location:itms-services://?action=download-manifest&url=";
+
     // $(".down").attr("href",iosurl);
     // $(".xia").attr("href",androidurl);
     
@@ -213,7 +214,7 @@
         $(".xia").click(function(event) {
             location.href = androidurl;
         });
-        
+
         console.log(s);
         //判断设备是否为iPhone
         if (/(iPhone|iPad|iPod|iOS)/i.test(ua)) {  
@@ -221,7 +222,7 @@
             $('.android').remove();
             if (Sys.safari) {
                 $(".down").click(function(event) {
-                    location.href = iosurl;
+                    location.href = iosex+iosurl;
                     setTimeout(function(){
                         // if(confirm){
                         //     location.href = iosurl;
